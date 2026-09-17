@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kheled"
+version = "0.1.0"
+description = "A lightweight, Pydantic-powered AI agent framework for local LLMs and tool execution."
+readme = "README.md"
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0",
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.3.0",
+    "mypy>=1.8.0",
+]
+
+# Optional CLI entry point for running kheled directly from terminal
+[project.scripts]
+kheled = "kheled.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kheled"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+src = ["src"]
+line-length = 88
