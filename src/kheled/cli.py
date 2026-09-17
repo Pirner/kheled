@@ -40,12 +40,13 @@ def run_cli():
     parser = argparse.ArgumentParser(description="kheled: Local Agent CLI")
     parser.add_argument(
         "--url",
-        default="http://localhost:1234/v1",
-        help="LM Studio base URL (default: http://localhost:1234/v1)",
+        default="http://192.168.178.78:1234/v1",
+        help="LM Studio base URL (default: http://192.168.178.78:1234/v1)",
     )
     parser.add_argument(
         "--model",
-        default="qwen2.5-coder-32b-instruct",
+        # default="qwen2.5-coder-32b-instruct",
+        default="mistral-small-3.2-24b-instruct-2506",
         help="Model identifier configured in LM Studio",
     )
     args = parser.parse_args()

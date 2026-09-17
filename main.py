@@ -1,6 +1,5 @@
-def main():
-    pass
+from kheled.cli import main
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
+    # pass
